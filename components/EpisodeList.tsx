@@ -30,6 +30,7 @@ function EpisodeList(props) {
             </li>
           ))}
         </ul>
+        <p>{episode.description}</p>
         <Link href="/ep/[id]" as={`/ep/${episode.id}`}>
           Read more
         </Link>

@@ -43,6 +43,7 @@ function Episode({ episode }) {
                     </li>
                   ))}
                 </ul>
+                <p>{episode.description}</p>
                 {episode.transcription != null ? (
                   <section className={styles.transcription_section}>
                     <h2 className={styles.transcription}>transcription</h2>
