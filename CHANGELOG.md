@@ -1,4 +1,7 @@
 # Changelog
+## v0.9.2 (2021-08-13)
+Minor tweaks.
+
 ## v0.9.1 (2021-02-12)
 Change avatar provider from Twitter to GitHub (#21)
 
