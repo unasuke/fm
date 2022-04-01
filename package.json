@@ -14,7 +14,7 @@
     "@fortawesome/react-fontawesome": "^0.1.11",
     "next": "11",
     "react": "^17.0.0",
-    "react-dom": "^17.0.0"
+    "react-dom": "^18.0.0"
   },
   "devDependencies": {
     "@types/js-yaml": "^4.0.0",
