@@ -18,7 +18,7 @@ function EpisodeList(props) {
             <li key={index} className={styles.guest}>
               <a href={`https://twitter.com/${guest.twitter}`}>
                 <img
-                  src={`https://unavatar.now.sh/github/${guest.github}`}
+                  src={`https://unavatar.io/github/${guest.github}`}
                   className={styles.avatar}
                   alt={guest.twitter}
                 />
