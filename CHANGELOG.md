@@ -1,4 +1,7 @@
 # Changelog
+## v0.9.3 (2023-11-06)
+Fix unavatar endpoint
+
 ## v0.9.2 (2021-08-13)
 Minor tweaks.
 
