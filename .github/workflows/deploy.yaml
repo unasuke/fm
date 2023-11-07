@@ -9,12 +9,12 @@ env:
 
 jobs:
   export:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: '12.x'
+          node-version: '20.x'
       - run: yarn install
       - run: yarn run export
       - name: Deploy to Firebase
