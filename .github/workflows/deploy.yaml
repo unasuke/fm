@@ -2,7 +2,7 @@ name: Deploy to Firebase Hosting
 on:
   push:
     tags:
-      - '*'
+      - "*"
 env:
   GOOGLE_ANALYTICS_ID: ${{ secrets.GOOGLE_ANALYTICS_ID }}
   FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
@@ -11,10 +11,12 @@ jobs:
   export:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - run: "corepack enable"
+      - uses: actions/setup-node@v4
         with:
-          node-version: '20.x'
+          node-version: "20.x"
+          cache: "yarn"
       - run: yarn install
       - run: yarn run export
       - name: Deploy to Firebase
