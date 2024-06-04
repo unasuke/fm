@@ -1,6 +1,11 @@
 name: build
 on:
-  - pull_request
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - "*"
 env:
   GOOGLE_ANALYTICS_ID: ${{ secrets.GOOGLE_ANALYTICS_ID }}
 
