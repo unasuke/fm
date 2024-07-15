@@ -56,6 +56,14 @@
   font-size: 1.5rem;
 }
 
+.transcription_section {
+  margin-bottom: 1.5rem;
+}
+
+.transcription {
+  font-size: 1.2rem;
+}
+
 .guests {
   list-style: none;
   padding: 0;
