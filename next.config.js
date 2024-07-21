@@ -12,5 +12,8 @@ module.exports = {
     }
     return config;
   },
-  output: 'export'
+  output: 'export',
+  images: {
+    unoptimized: true
+  }
 }

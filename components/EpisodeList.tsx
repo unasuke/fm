@@ -1,6 +1,7 @@
 import styles from "./EpisodeList.module.css";
 import Link from "next/link";
 import { EpisodeData } from "../interfaces";
+import Image from "next/image";
 
 function EpisodeList(props) {
   const episodes: Array<EpisodeData> = props.episodes;
@@ -17,10 +18,12 @@ function EpisodeList(props) {
           {episode.guests.map((guest, index) => (
             <li key={index} className={styles.guest}>
               <a href={`https://twitter.com/${guest.twitter}`}>
-                <img
+                <Image
                   src={`https://unavatar.io/github/${guest.github}`}
                   className={styles.avatar}
                   alt={guest.twitter}
+                  width={42}
+                  height={42}
                 />
                 <span className={styles.name}>@{guest.twitter}</span>
               </a>

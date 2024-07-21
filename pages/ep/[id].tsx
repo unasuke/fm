@@ -1,4 +1,3 @@
-import { useRouter } from "next/router";
 import { EpisodeData } from "../../interfaces";
 import Hero from "../../components/Hero";
 import styles from "./[id].module.css";
@@ -7,11 +6,9 @@ import Link from "next/link";
 import { GetStaticProps } from "next";
 import Footer from "../../components/Footer";
 import Head from "next/head";
+import Image from "next/image";
 
 function Episode({ episode }) {
-  const router = useRouter();
-  const { id } = router.query;
-
   return (
     <>
       <Head>
@@ -34,10 +31,12 @@ function Episode({ episode }) {
                   {episode.guests.map((guest, index) => (
                     <li key={index} className={styles.guest}>
                       <a href={`https://twitter.com/${guest.twitter}`}>
-                        <img
+                        <Image
                           src={`https://unavatar.io/github/${guest.github}`}
                           className={styles.avatar}
                           alt={guest.twitter}
+                          width={42}
+                          height={42}
                         />
                         <span className={styles.name}>@{guest.twitter}</span>
                       </a>
