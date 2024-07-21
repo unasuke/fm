@@ -1,17 +1,14 @@
-import { useRouter } from "next/router";
 import { EpisodeData } from "../../interfaces";
 import Hero from "../../components/Hero";
 import styles from "./[id].module.css";
 import { getEpisodeData } from "../../lib/api";
 import Link from "next/link";
-import { GetStaticPaths, GetStaticProps } from "next";
+import { GetStaticProps } from "next";
 import Footer from "../../components/Footer";
 import Head from "next/head";
+import Image from "next/image";
 
 function Episode({ episode }) {
-  const router = useRouter();
-  const { id } = router.query;
-
   return (
     <>
       <Head>
@@ -20,9 +17,7 @@ function Episode({ episode }) {
       <div className={styles.container}>
         <div className={styles.gutter}>
           <Link href="/">
-            <a>
-              <Hero />
-            </a>
+            <Hero />
           </Link>
           <div className={styles.wrapper}>
             <section className={styles.episode}>
@@ -36,10 +31,12 @@ function Episode({ episode }) {
                   {episode.guests.map((guest, index) => (
                     <li key={index} className={styles.guest}>
                       <a href={`https://twitter.com/${guest.twitter}`}>
-                        <img
+                        <Image
                           src={`https://unavatar.io/github/${guest.github}`}
                           className={styles.avatar}
                           alt={guest.twitter}
+                          width={42}
+                          height={42}
                         />
                         <span className={styles.name}>@{guest.twitter}</span>
                       </a>
@@ -62,9 +59,7 @@ function Episode({ episode }) {
                 />
               </article>
             </section>
-            <Link href={"/"}>
-              <a>Back to top</a>
-            </Link>
+            <Link href={"/"}>Back to top</Link>
           </div>
         </div>
         <Footer />

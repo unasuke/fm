@@ -25,7 +25,7 @@ function Index({ episodes }) {
   );
 }
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getStaticProps: GetStaticProps = async () => {
   const episodes: Array<EpisodeData> = getEpisodeData();
 
   return {
