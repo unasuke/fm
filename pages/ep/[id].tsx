@@ -4,7 +4,7 @@ import Hero from "../../components/Hero";
 import styles from "./[id].module.css";
 import { getEpisodeData } from "../../lib/api";
 import Link from "next/link";
-import { GetStaticPaths, GetStaticProps } from "next";
+import { GetStaticProps } from "next";
 import Footer from "../../components/Footer";
 import Head from "next/head";
 
@@ -12,63 +12,61 @@ function Episode({ episode }) {
   const router = useRouter();
   const { id } = router.query;
 
-  return <>
-    <Head>
-      <title>{`ep${episode.id} "${episode.title}" - unasuke.fm`}</title>
-    </Head>
-    <div className={styles.container}>
-      <div className={styles.gutter}>
-        <Link href="/">
-
-          <Hero />
-
-        </Link>
-        <div className={styles.wrapper}>
-          <section className={styles.episode}>
-            <article className={styles.entry}>
-              <section className={styles.header}>
-                <div>{episode.date}</div>
-                <div className={styles.id}>#{episode.id}</div>
-              </section>
-              <h1 className={styles.title}>{episode.title}</h1>
-              <ul className={styles.guests}>
-                {episode.guests.map((guest, index) => (
-                  <li key={index} className={styles.guest}>
-                    <a href={`https://twitter.com/${guest.twitter}`}>
-                      <img
-                        src={`https://unavatar.io/github/${guest.github}`}
-                        className={styles.avatar}
-                        alt={guest.twitter}
-                      />
-                      <span className={styles.name}>@{guest.twitter}</span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-              {episode.transcription != null ? (
-                <section className={styles.transcription_section}>
-                  <h2 className={styles.transcription}>transcription</h2>
-                  <a href={episode.transcription}>{episode.transcription}</a>
-                </section>
-              ) : (
-                <></>
-              )}
-              <audio
-                controls
-                preload={"metadata"}
-                src={episode.url}
-                className={styles.audio}
-              />
-            </article>
-          </section>
-          <Link href={"/"}>
-            Back to top
+  return (
+    <>
+      <Head>
+        <title>{`ep${episode.id} "${episode.title}" - unasuke.fm`}</title>
+      </Head>
+      <div className={styles.container}>
+        <div className={styles.gutter}>
+          <Link href="/">
+            <Hero />
           </Link>
+          <div className={styles.wrapper}>
+            <section className={styles.episode}>
+              <article className={styles.entry}>
+                <section className={styles.header}>
+                  <div>{episode.date}</div>
+                  <div className={styles.id}>#{episode.id}</div>
+                </section>
+                <h1 className={styles.title}>{episode.title}</h1>
+                <ul className={styles.guests}>
+                  {episode.guests.map((guest, index) => (
+                    <li key={index} className={styles.guest}>
+                      <a href={`https://twitter.com/${guest.twitter}`}>
+                        <img
+                          src={`https://unavatar.io/github/${guest.github}`}
+                          className={styles.avatar}
+                          alt={guest.twitter}
+                        />
+                        <span className={styles.name}>@{guest.twitter}</span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+                {episode.transcription != null ? (
+                  <section className={styles.transcription_section}>
+                    <h2 className={styles.transcription}>transcription</h2>
+                    <a href={episode.transcription}>{episode.transcription}</a>
+                  </section>
+                ) : (
+                  <></>
+                )}
+                <audio
+                  controls
+                  preload={"metadata"}
+                  src={episode.url}
+                  className={styles.audio}
+                />
+              </article>
+            </section>
+            <Link href={"/"}>Back to top</Link>
+          </div>
         </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
-  </>;
+    </>
+  );
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
