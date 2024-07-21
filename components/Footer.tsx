@@ -13,11 +13,9 @@ export default function Footer() {
           <FontAwesomeIcon fixedWidth icon={faGithub} className={styles.icon} />
           Source
         </a>
-        <Link href={"/feed.xml"}>
-          <a className={styles.link}>
-            <FontAwesomeIcon fixedWidth icon={faRss} className={styles.icon} />
-            Feed
-          </a>
+        <Link href={"/feed.xml"} className={styles.link}>
+
+          <FontAwesomeIcon fixedWidth icon={faRss} className={styles.icon} />Feed
         </Link>
         <a
           className={styles.link}

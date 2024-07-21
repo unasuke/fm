@@ -16,7 +16,7 @@ function Episode({ episode }) {
       </Head>
       <div className={styles.container}>
         <div className={styles.gutter}>
-          <Link href="/">
+          <Link href="/" legacyBehavior>
             <Hero />
           </Link>
           <div className={styles.wrapper}>
