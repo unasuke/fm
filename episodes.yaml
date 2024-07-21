@@ -1,6 +1,7 @@
 - id: 8
-  date: 2024-07-06
+  date: 2024-07-06T15:00:00+09:00
   title: "Blog profiler"
+  description: "osyoyuさんとプロファイラやブログ自作などについて話しました。"
   url: https://s3.wasabisys.com/unasuke-fm/08-blog-profiler.mp3
   transcription: "https://unasuke.gumroad.com/l/unasukefm-ep8"
   guests:
