@@ -1,13 +1,11 @@
-/* eslint-disable @typescript-eslint/no-var-requires, no-undef */
-
-const fs = require("fs");
-const path = require("path");
-const Podcast = require("podcast");
-const yaml = require("js-yaml");
-const fetch = require("node-fetch");
+import fs from "fs";
+import path from "path";
+import { Podcast } from "podcast";
+import yaml from "js-yaml";
+import fetch from "node-fetch";
 
 (async () => {
-  const episodes = yaml.safeLoad(
+  const episodes = yaml.load(
     fs.readFileSync(path.join(process.cwd(), "episodes.yaml"), "utf8")
   );
 
