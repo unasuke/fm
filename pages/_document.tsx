@@ -1,5 +1,6 @@
 import Document, {
   Html,
+  Head,
   Main,
   NextScript,
   DocumentContext,
@@ -14,6 +15,7 @@ class UnasukeFmDocument extends Document {
   render(): JSX.Element {
     return (
       <Html lang="ja">
+        <Head></Head>
         <body>
           <Main />
           <NextScript />
