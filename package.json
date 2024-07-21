@@ -3,7 +3,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "export": "yarn run build && next export",
+    "export": "yarn run build",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx pages pages lib interfaces components",
     "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx pages pages lib interfaces components --fix"
   },

@@ -11,5 +11,6 @@ module.exports = {
       require("./scripts/generate-feed");
     }
     return config;
-  }
+  },
+  output: 'export'
 }
