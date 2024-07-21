@@ -13,7 +13,7 @@ export default function Footer() {
           <FontAwesomeIcon fixedWidth icon={faGithub} className={styles.icon} />
           Source
         </a>
-        <Link href={'#'} >
+        <Link href={'#'} legacyBehavior>
           <del>
             <a className={styles.link} >
               <FontAwesomeIcon fixedWidth icon={faRss} className={styles.icon} />

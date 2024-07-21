@@ -28,7 +28,7 @@ function EpisodeList(props) {
           ))}
         </ul>
         <Link href="/ep/[id]" as={`/ep/${episode.id}`}>
-          <a>Read more</a>
+          Read more
         </Link>
       </article>
     </li>
