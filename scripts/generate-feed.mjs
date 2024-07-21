@@ -12,10 +12,11 @@ import fetch from "node-fetch";
   const feed = new Podcast({
     title: "unasuke.fm",
     description: "description",
-    feed_url: `${process.env.DEPLOY_URL}/feed.xml`,
-    site_url: process.env.DEPLOY_URL,
-    image_url: `${process.env.DEPLOY_URL}/artwork.png`,
-    docs: process.env.DEPLOY_URL,
+    feedUrl: `https://unasuke.fm/feed.xml`,
+    siteUrl: "https://unasuke.fm",
+    imageUrl: `https://unasuke.fm/artwork.png`,
+    docs: `https://unasuke.fm`,
+    generator: "https://github.com/unasuke/fm",
     author: "unasuke",
     language: "ja",
     categories: ["Technology"],
@@ -27,15 +28,10 @@ import fetch from "node-fetch";
     itunesExplicit: false,
     itunesCategory: [
       {
-        text: "Entertainment",
-        subcats: [
-          {
-            text: "Television",
-          },
-        ],
+        text: "Technology",
       },
     ],
-    itunesImage: `${process.env.DEPLOY_URL}/artwork.png`,
+    itunesImage: `https://unasuke.fm/artwork.png`,
   });
   for (const ep of episodes) {
     // console.log(ep);
@@ -51,7 +47,7 @@ import fetch from "node-fetch";
     feed.addItem({
       title: ep.title,
       description: ep.description,
-      url: `${process.env.DEPLOY_URL}/ep/${ep.id}`,
+      url: `https://unasuke.fm/ep/${ep.id}`,
       date: ep.date,
       enclosure: { url: ep.url, size: length.toString(), type: type },
     });
