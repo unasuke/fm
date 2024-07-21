@@ -46,6 +46,14 @@ function Episode({ episode }) {
                     </li>
                   ))}
                 </ul>
+                {episode.transcription != null ? (
+                  <section className={styles.transcription_section}>
+                    <h2 className={styles.transcription}>transcription</h2>
+                    <a href={episode.transcription}>{episode.transcription}</a>
+                  </section>
+                ) : (
+                  <></>
+                )}
                 <audio
                   controls
                   preload={"metadata"}
