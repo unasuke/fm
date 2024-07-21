@@ -14,8 +14,8 @@ export default function Footer() {
           Source
         </a>
         <Link href={"/feed.xml"} className={styles.link}>
-
-          <FontAwesomeIcon fixedWidth icon={faRss} className={styles.icon} />Feed
+          <FontAwesomeIcon fixedWidth icon={faRss} className={styles.icon} />
+          Feed
         </Link>
         <a
           className={styles.link}
