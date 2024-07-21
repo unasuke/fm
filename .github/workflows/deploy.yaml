@@ -3,6 +3,8 @@ on:
   push:
     tags:
       - "*"
+    branches:
+      - "master"
 env:
   GOOGLE_ANALYTICS_ID: ${{ secrets.GOOGLE_ANALYTICS_ID }}
   FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
