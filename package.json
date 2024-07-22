@@ -3,7 +3,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "export": "yarn run build",
+    "export": "node scripts/generate-feed.mjs && yarn run build",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx pages pages lib interfaces components",
     "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx pages pages lib interfaces components --fix"
   },
@@ -31,6 +31,8 @@
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react": "^7.35.0",
     "js-yaml": "^4.0.0",
+    "node-fetch": "^3.3.2",
+    "podcast": "^2.0.1",
     "prettier": "^3.3.3",
     "typescript": "^4.0.0"
   },

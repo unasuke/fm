@@ -1,19 +1,12 @@
 module.exports = {
-  exportPathMap: async function(
+  exportPathMap: async function (
     defaultPathMap,
     { dev, dir, outDir, distDir, buildId }
   ) {
-    return {
-    }
+    return {};
   },
-  webpack: (config, { isServer }) => {
-    if (isServer) {
-      require("./scripts/generate-feed");
-    }
-    return config;
-  },
-  output: 'export',
+  output: "export",
   images: {
-    unoptimized: true
-  }
-}
+    unoptimized: true,
+  },
+};

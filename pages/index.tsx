@@ -13,6 +13,16 @@ function Index({ episodes }) {
       <Head>
         <title>unasuke.fm</title>
         <meta property="og:title" content="unasuke.fm" />
+        <meta property="og:url" content="https://unasuke.fm" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://unasuke.fm/artwork.png" />
+        <meta property="twitter:card" content="summary" />
+        <meta property="twitter:creator" content="@yu_suke1994" />
+        <meta
+          property="twitter:image"
+          content="https://unasuke.fm/artwork.png"
+        />
+        <meta name="fediverse:creator" content="@unasuke@mstdn.unasuke.com" />
       </Head>
       <div className={styles.container}>
         <div className={styles.gutter}>

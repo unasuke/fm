@@ -5,6 +5,7 @@ import Document, {
   NextScript,
   DocumentContext,
 } from "next/document";
+import React from "react";
 
 class UnasukeFmDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -15,7 +16,13 @@ class UnasukeFmDocument extends Document {
   render(): JSX.Element {
     return (
       <Html lang="ja">
-        <Head></Head>
+        <Head>
+          <link
+            rel="alternate"
+            type="application/rss+xml"
+            href={`${process.env.DEPLOY_URL}/feed.xml`}
+          />
+        </Head>
         <body>
           <Main />
           <NextScript />
