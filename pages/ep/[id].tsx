@@ -41,6 +41,7 @@ function Episode({ episode }) {
           property="twitter:image"
           content="https://unasuke.fm/artwork.png"
         />
+        <meta name="fediverse:creator" content="@unasuke@mstdn.unasuke.com" />
       </Head>
       <div className={styles.container}>
         <div className={styles.gutter}>
