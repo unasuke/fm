@@ -13,6 +13,34 @@ function Episode({ episode }) {
     <>
       <Head>
         <title>{`ep${episode.id} "${episode.title}" - unasuke.fm`}</title>
+        <meta
+          property="og:title"
+          content={`ep${episode.id} "${episode.title}" - unasuke.fm`}
+        />
+        <meta
+          property="og:url"
+          content={`https://unasuke.fm/ep/${episode.id}`}
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://unasuke.fm/artwork.png" />
+        <meta property="twitter:card" content="summary" />
+        <meta
+          property="twitter:title"
+          content={`ep${episode.id} "${episode.title}" - unasuke.fm`}
+        />
+        <meta property="twitter:creator" content="@yu_suke1994" />
+        <meta
+          property="twitter:image"
+          content="https://unasuke.fm/artwork.png"
+        />
+        <meta
+          property="twitter:description"
+          content={episode.transcription != null ? episode.description : ""}
+        />
+        <meta
+          property="twitter:image"
+          content="https://unasuke.fm/artwork.png"
+        />
       </Head>
       <div className={styles.container}>
         <div className={styles.gutter}>
