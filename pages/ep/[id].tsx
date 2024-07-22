@@ -15,7 +15,7 @@ function Episode({ episode }) {
         <title>{`ep${episode.id} "${episode.title}" - unasuke.fm`}</title>
         <meta
           property="og:title"
-          content={`ep${episode.id} "${episode.title}" - unasuke.fm`}
+          content={`ep${episode.id} '${episode.title}' - unasuke.fm`}
         />
         <meta
           property="og:url"
@@ -26,7 +26,7 @@ function Episode({ episode }) {
         <meta property="twitter:card" content="summary" />
         <meta
           property="twitter:title"
-          content={`ep${episode.id} "${episode.title}" - unasuke.fm`}
+          content={`ep${episode.id} '${episode.title}' - unasuke.fm`}
         />
         <meta property="twitter:creator" content="@yu_suke1994" />
         <meta
