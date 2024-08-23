@@ -212,14 +212,14 @@ __metadata:
   linkType: hard
 
 "@next/third-parties@npm:^14.2.5":
-  version: 14.2.5
-  resolution: "@next/third-parties@npm:14.2.5"
+  version: 14.2.6
+  resolution: "@next/third-parties@npm:14.2.6"
   dependencies:
     third-party-capital: "npm:1.0.20"
   peerDependencies:
     next: ^13.0.0 || ^14.0.0
     react: ^18.2.0
-  checksum: 10c0/04caedb8de1044a892439c460b916ef462389012724fd86f8665726cbbc1f25d8eb6fe6d76111ca3d01483353351a6d4fd48bd1205212f25d485e04407228fcf
+  checksum: 10c0/2b770b523eb716c329b24da8a2d69f37e413389f1c916a530b10fc2afa96dda085ce169b13c949a3abd7017d422cf642720ef096c269a614214025239e15a259
   languageName: node
   linkType: hard
 
