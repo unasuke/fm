@@ -1,3 +1,12 @@
+- id: 10
+  date: 2024-09-09T22:00:00+09:00
+  title: "Two organizers"
+  description: "okuramasafumiさんとKaigi on Rails 2024やポッドキャストの収録について話しました。"
+  url: "https://s3.wasabisys.com/unasuke-fm/10-two-organizers.mp3"
+  transcription: "https://unasuke.gumroad.com/l/unasukefm-ep10"
+  guests:
+    - twitter: "okuramasafumi"
+      github: "okuramasafumi"
 - id: 9
   date: 2024-07-14T15:00:00+09:00
   title: "Hallway track"
