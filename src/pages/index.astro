@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
 import Logo from "../images/logo.svg";
 import "../styles/index.css";
+import Footer from "../components/Footer.astro";
 
 const episodes = (await getCollection("episodes")).sort(
   (a, b) => b.data.id - a.data.id,
@@ -72,6 +73,7 @@ const episodes = (await getCollection("episodes")).sort(
           </ol>
         </section>
       </div>
+      <Footer />
     </div>
   </body>
 </html>
