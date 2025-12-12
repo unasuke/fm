@@ -88,6 +88,10 @@ body {
 }
 
 .guest {
+  margin-bottom: 10px;
+}
+
+.guest_elem {
   text-decoration: none;
 }
 

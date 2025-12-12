@@ -49,10 +49,10 @@ const episodes = (await getCollection("episodes")).sort(
                     <h1 class="title">{episode.data.title}</h1>
                     <ul class="guests">
                       {episode.data.guests.map((guest) => (
-                        <li>
+                        <li class="guest">
                           <a
                             href={`https://x.com/${guest.twitter}`}
-                            class="guest"
+                            class="guest_elem"
                           >
                             <Image
                               src={`https://unavatar.io/github/${guest.github}`}
