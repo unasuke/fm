@@ -63,7 +63,7 @@ const title = `ep${episode.data.id} "${episode.data.title}" - unasuke.fm`;
                 {
                   episode.data.guests.map((guest) => (
                     <li>
-                      <a href={`https://x.com/${guest.twitter}`}>
+                      <a href={`https://x.com/${guest.twitter}`} class="guest">
                         <Image
                           src={`https://unavatar.io/github/${guest.github}`}
                           alt={guest.twitter || ""}
