@@ -1,16 +1,79 @@
 ---
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+import Logo from "../images/logo.svg";
+import "../styles/index.css";
 
+const episodes = (await getCollection("episodes")).sort(
+  (a, b) => b.data.id - a.data.id,
+);
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta property="og:title" content="unasuke.fm" />
+    <meta property="og:url" content="https://unasuke.fm" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://unasuke.fm/artwork.png" />
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:creator" content="@yu_suke1994" />
+    <meta property="twitter:image" content="https://unasuke.fm/artwork.png" />
+    <meta name="fediverse:creator" content="@unasuke@mstdn.unasuke.com" />
+    <title>unasuke.fm</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="gutter">
+        <h1 class="hero">
+          <Image src={Logo} alt="unasuke.fm" class="logo" loading={"eager"} />
+        </h1>
+        <section class="wrapper">
+          <ol class="episodes">
+            {
+              episodes.map((episode) => (
+                <li class="episode">
+                  <article id={`ep${episode.data.id}`} class="entry">
+                    <section class="header">
+                      <div>
+                        {new Intl.DateTimeFormat("ja-JP", {
+                          year: "numeric",
+                          month: "2-digit",
+                          day: "2-digit",
+                        }).format(episode.data.date)}
+                      </div>
+                      <div class="id">{`#${episode.data.id}`}</div>
+                    </section>
+                    <h1 class="title">{episode.data.title}</h1>
+                    <ul class="guests">
+                      {episode.data.guests.map((guest) => (
+                        <li>
+                          <a href={`https://x.com/${guest.twitter}`}>
+                            <Image
+                              src={`https://unavatar.io/github/${guest.github}`}
+                              alt={guest.twitter || ""}
+                              width={42}
+                              height={42}
+                              loading={"lazy"}
+                              class="avatar"
+                            />
+                            <span class="name">{`@${guest.twitter}`}</span>
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                    <p>{episode.data.description}</p>
+                    <a href={`/ep/${episode.data.id}`}>Read more</a>
+                  </article>
+                </li>
+              ))
+            }
+          </ol>
+        </section>
+      </div>
+    </div>
+  </body>
 </html>
