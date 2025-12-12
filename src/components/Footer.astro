@@ -1,0 +1,47 @@
+---
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { icon } from "@fortawesome/fontawesome-svg-core";
+import { faRss } from "@fortawesome/free-solid-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+
+const rssIcon = icon(faRss);
+const githubIcon = icon(faGithub);
+---
+
+<style>
+  .footer {
+    width: 100%;
+    background-color: #eeeeee;
+    text-align: center;
+    color: #777777;
+  }
+
+  .links {
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto 10px;
+    justify-content: space-evenly;
+  }
+
+  .icon {
+    margin-right: 3px;
+  }
+
+  .link {
+    color: #777777;
+  }
+</style>
+
+<footer class="footer">
+  <p>This site using cookies for analytics.</p>
+  <div class="links">
+    <a class="link" href="https://github.com/unasuke/fm">
+      <Fragment set:html={githubIcon.html} class="icon" />
+      Source</a
+    >
+    <a class="link" href="/feed.xml">
+      <Fragment set:html={rssIcon.html} class="icon" />
+      Feed</a
+    >
+  </div>
+</footer>
