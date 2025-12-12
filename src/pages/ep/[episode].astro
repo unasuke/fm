@@ -1,0 +1,103 @@
+---
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+import Logo from "../../images/logo.svg";
+import "../../styles/index.css";
+
+export async function getStaticPaths() {
+  const episodes = await getCollection("episodes");
+  return episodes.map((episode) => ({
+    params: { episode: episode.data.id },
+    props: { episode },
+  }));
+}
+
+const { episode } = Astro.props;
+const title = `ep${episode.data.id} "${episode.data.title}" - unasuke.fm`;
+---
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta property="og:title" content={title} />
+    <meta
+      property="og:url"
+      content={`https://unasuke.fm/ep/${episode.data.id}`}
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://unasuke.fm/artwork.png" />
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:creator" content="@yu_suke1994" />
+    <meta property="twitter:image" content="https://unasuke.fm/artwork.png" />
+    <meta property="twitter:title" content={title} />
+    <meta name="fediverse:creator" content="@unasuke@mstdn.unasuke.com" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="gutter">
+        <a href="/">
+          <h1 class="hero">
+            <Image src={Logo} alt="unasuke.fm" class="logo" loading={"eager"} />
+          </h1>
+        </a>
+        <div class="wrapper">
+          <section class="episode">
+            <article class="entry">
+              <section class="header">
+                <div>
+                  {
+                    new Intl.DateTimeFormat("ja-JP", {
+                      year: "numeric",
+                      month: "2-digit",
+                      day: "2-digit",
+                    }).format(episode.data.date)
+                  }
+                </div>
+                <div class="id">{`#${episode.data.id}`}</div>
+              </section>
+              <h1 class="title">{episode.data.title}</h1>
+              <ul class="guests">
+                {
+                  episode.data.guests.map((guest) => (
+                    <li>
+                      <a href={`https://x.com/${guest.twitter}`}>
+                        <Image
+                          src={`https://unavatar.io/github/${guest.github}`}
+                          alt={guest.twitter || ""}
+                          width={42}
+                          height={42}
+                          loading={"lazy"}
+                          class="avatar"
+                        />
+                        <span class="name">{`@${guest.twitter}`}</span>
+                      </a>
+                    </li>
+                  ))
+                }
+              </ul>
+              <p>{episode.data.description}</p>
+              {
+                episode.data.transcription && (
+                  <section class="transcription_section">
+                    <h2 class="transcription">transcription</h2>
+                    <a href={episode.data.transcription}>
+                      {episode.data.transcription}
+                    </a>
+                  </section>
+                )
+              }
+              <audio
+                controls
+                preload="metadata"
+                src={episode.data.url}
+                class="audio"></audio>
+            </article>
+          </section>
+          <a href="/">Back to top</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

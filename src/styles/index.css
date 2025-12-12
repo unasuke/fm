@@ -89,3 +89,17 @@
 .name {
   vertical-align: middle;
 }
+
+.transcription_section {
+  margin-bottom: 1.5rem;
+}
+
+.transcription {
+  font-size: 1.2rem;
+}
+
+.audio {
+  display: block;
+  margin-bottom: 20px;
+  width: 100%;
+}
