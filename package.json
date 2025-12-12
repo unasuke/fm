@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "node scripts/generate-feed.mjs && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -15,6 +15,9 @@
     "astro": "^5.16.5"
   },
   "devDependencies": {
+    "js-yaml": "^4.1.1",
+    "node-fetch": "^3.3.2",
+    "podcast": "^2.0.1",
     "prettier": "3.7.4",
     "prettier-plugin-astro": "0.14.1"
   }
