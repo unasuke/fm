@@ -1,0 +1,31 @@
+---
+import { Image } from "astro:assets";
+import NotFoundImg from "../images/404.png";
+---
+
+<style>
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .not-found {
+      display: block;
+    }
+  }
+</style>
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>404 not found</title>
+  </head>
+  <body>
+    <Image src={NotFoundImg} alt="404 Not Found" class="not-found" />
+    <div>
+      <a href="/">unasuke.fmに戻る</a>
+    </div>
+  </body>
+</html>
