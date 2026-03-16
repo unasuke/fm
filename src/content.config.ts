@@ -9,14 +9,14 @@ const episodes = defineCollection({
     date: z.date(),
     title: z.string(),
     description: z.string(),
-    url: z.string().url(),
+    url: z.url(),
     guests: z.array(
       z.object({
         twitter: z.string().optional(),
         github: z.string().optional(),
       }),
     ),
-    transcription: z.string().url().optional(),
+    transcription: z.url().optional(),
   }),
 });
 
