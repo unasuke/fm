@@ -1,11 +1,11 @@
 import fs from "fs";
 import path from "path";
 import { Podcast } from "podcast";
-import yaml from "js-yaml";
+import { load } from "js-yaml";
 import fetch from "node-fetch";
 
 (async () => {
-  const episodes = yaml.load(
+  const episodes = load(
     fs.readFileSync(path.join(process.cwd(), "episodes.yaml"), "utf8")
   );
 
