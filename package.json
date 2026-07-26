@@ -19,7 +19,7 @@
     "js-yaml": "^5.2.2",
     "node-fetch": "^3.3.2",
     "podcast": "^2.0.1",
-    "prettier": "3.9.5",
+    "prettier": "3.9.6",
     "prettier-plugin-astro": "0.14.1"
   }
 }
